@@ -1,0 +1,483 @@
+:root {
+    --cor1: #4b4b4b;
+    --cor2: #121EEA;
+    --cor3: #32FF00;
+    --cor4: #EAA10F;
+    --cor5: #000000;
+    --cor6: #155e12;
+    --cor7: #ffffff; 
+}
+
+html, body {
+  background-color: var(--cor1);
+  padding: 0;
+  margin: 0;
+  color: var(--cor7);
+  height: 100%; /* Garantindo que o corpo ocupe toda a altura da tela */
+}
+
+
+
+        /* CABEÇALHO - FIXO */
+          header {
+            height: 8vh; /* Definindo a altura do header como 5% da altura da viewport */
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            }
+          #cabecalho {
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--cor3);
+            box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5); /* Adiciona a sombra à borda */
+            }
+              
+            .botoes {
+              display: flex;
+              justify-content: space-between;
+              align-items: center; /* Alinhar verticalmente */
+              padding: 0 10px; /* Alterando padding horizontal */
+              margin-left: 0; /* Removendo a margem esquerda */
+            }
+
+          .botoes a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: var(--cor7);
+            background-color: var(--cor5);
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 1.5rem;
+            border: 2px solid #333; /* Define a cor e a espessura da borda */
+            border-radius: 5px; /* Arredonda os cantos da borda */
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3); /* Adiciona a sombra à borda */
+            margin-top: 5%;
+          }
+          .link-baixo2 {
+            margin-top: 0; /* Altere este valor para ajustar o espaço */
+        }
+          .links {
+            display: flex;
+            gap: 20px;  
+        }
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto; /* Adiciona scroll caso o conteúdo seja maior do que a altura da janela */
+          background-color: rgba(0, 0, 0, 0.4);
+          color: var(--cor1);
+          padding-top: 100px;
+        }
+        
+        
+        .modal-content {
+          background-color: #fefefe;
+          margin: 10% auto;
+          padding: 20px;
+          border: 1px solid #888;
+          max-width: 600px; /* Define uma largura máxima para a modal */
+          width: 80%;
+          max-height: 80vh;
+          overflow-y: auto;
+          box-sizing: border-box; /* Considera o padding e a borda na largura total */
+        }
+
+          .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+          }
+          
+          .close:hover,
+          .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+          }
+           
+          #btnAcess{
+            margin-top: 1%;
+          }
+
+          .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid #333;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2);
+            padding: 10px;
+            margin: 10px 0;
+            background-color: var(--cor5);
+            font-size: 0.6rem;
+            position: fixed;
+            right: 0;
+        }
+        .info-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+      }
+        .text-info {
+            /* O espaço que o texto ocupa */
+            flex: 1;
+            margin-right: auto;
+        }
+        
+        .img-info img {
+            /* Definindo o tamanho da imagem */
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 40px;
+            align-self: center;
+            height: auto; /* ajuste a altura da imagem de acordo com sua necessidade */
+        }
+        div > a {
+          margin-left: auto;
+      }
+        .img-logo {
+          left: 50px;
+          top: 20px;
+      }
+  
+      .img-logo img {
+          animation: rotate 3s infinite linear;
+          transform-origin: center center;
+          width: 80px;
+      }
+  
+      @keyframes rotate {
+          0% { transform: rotateY(0deg); }
+          100% { transform: rotateY(360deg); }
+      }
+
+      #menu-btn {
+        display: none; /* Escondendo o botão por padrão */
+    }
+    
+/*Modal*/
+
+.competidores-tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.competidores-tabela th {
+  padding: 10px 0; 
+  border-bottom: 5px solid var(--cor1); 
+}
+
+.competidores-tabela td {
+  padding: 20px 0; 
+  border-bottom: 1px solid var(--cor4); 
+  font-size: 0.9rem;
+}
+
+.competidores-tabela .odds-modal {
+  background-color: var(--cor5); 
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.competidores-tabela .odds-modal:hover {
+  background-color: var(--cor1); 
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.account-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.account-section {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-section a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--cor5);
+  font-weight: bold;
+}
+
+.account-section .icon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+
+   
+/*main*/
+
+main {
+  margin-top: 6vh; /* Adicionando uma margem superior ao main de 6% da altura da viewport */
+}
+.container {
+  width: 100%;
+  overflow: auto; /* Adicionado para evitar problemas com elementos flutuantes */
+}
+
+.provas {
+  width: 49%;
+  float: left;
+  background-color: var(--cor3);
+  color: var(--cor5);
+  border-radius: 5px;
+}
+
+.apostados {
+  width: 49%;
+  float: right;
+  background-color: var(--cor3);
+  color: var(--cor5);
+  border-radius: 5px;
+}
+
+.evento-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.evento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #4b4b4b;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 20%;
+}
+
+.evento h3, .evento p {
+  margin: 0;
+}
+
+.evento img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.categoria-box {
+  background-color: var(--cor1);
+  color: white;
+  width: 40%;
+  padding: 10px;
+  margin: 2.5%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+  float: left;
+}
+
+.categoria-box .categoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+
+/*Minha Conta*/
+
+/* Estilos para a coluna esquerda */
+.left-column {
+  background-color: var(--cor7);
+  color: var(--cor1);
+  width: 25%;
+  float: left;
+  margin-left: 5%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5); /* Adiciona a sombra à borda */
+}
+
+/* Estilos para a coluna direita */
+.right-column {
+  background-color: var(--cor7);
+  color: var(--cor1);
+  width: 65%;
+  float: right;
+  margin-top: 10%;
+  margin-left: 1%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5); /* Adiciona a sombra à borda */
+}
+
+/* Estilos para os itens do menu */
+.menu ul li {
+  padding: 10px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.menu ul li:last-child {
+  border-bottom: none;
+}
+
+.menu ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.menu ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Estilos para as seções */
+.section {
+  display: none;
+  padding: 20px;
+}
+
+.section.active {
+  display: block;
+}
+
+/*telas menores */
+@media screen and (max-width: 700px) {
+  #cabecalho, .botoes a {
+      font-size: 0.9rem;
+  }
+  .modal-body p {
+    font-size: 0.7rem;
+  }
+  .tablinks {
+    font-size: 0.7rem;
+  }
+  .full-width-modal {
+    width: 100%;
+  }
+  /* Estilos para a coluna esquerda */
+.left-column {
+  background-color: var(--cor7);
+  color: var(--cor1);
+  width: 35%;
+  float: left;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5); /* Adiciona a sombra à borda */
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para a coluna direita */
+.right-column {
+  background-color: var(--cor7);
+  color: var(--cor1);
+  clear: both;
+  width: 64%;
+  float: right;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5); /* Adiciona a sombra à borda */
+  margin: 0;
+  padding: 0;
+}
+}
+
+@media screen and (max-width: 600px) {
+  #cabecalho, .botoes a {
+      font-size: 0.8rem;
+  }
+  .modal-body p {
+    font-size: 0.7rem;
+  }
+  .tablinks {
+    font-size: 0.7rem;
+  }
+  .full-width-modal {
+    width: 100%;
+  }
+  .provas, .apostados {
+    width: 100%;
+    margin-top: 20px;
+}
+.categoria-box {
+  width: 100%;
+  margin-top: 20px;
+}
+}
+
+/*ADM*/
+
+#apostas-section .submenu, .hidden {
+  display: none;
+}
